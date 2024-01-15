@@ -1,1 +1,10 @@
-
+numpy~=1.22.1
+torch~=2.1.0
+opencv-python~=4.9.0.80
+Distance~=0.1.3
+nltk~=3.7
+torchvision~=0.12.0
+tqdm~=4.64.0
+matplotlib~=3.5.1
+scikit-image~=0.22.0
+pillow~=10.2.0
