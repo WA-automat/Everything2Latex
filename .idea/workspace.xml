@@ -44,8 +44,8 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.encoderDemo">
-    <configuration name="encoderDemo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.EncoderAndDecoderDemo">
+    <configuration name="EncoderAndDecoderDemo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Everything2Latex" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -58,7 +58,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/encoderDemo.py" />
+      <option name="SCRIPT_NAME" value="F:\计科生活\大二\Everything2Latex\examples\EncoderAndDecoderDemo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -91,7 +91,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.encoderDemo" />
+        <item itemvalue="Python.EncoderAndDecoderDemo" />
         <item itemvalue="Python.train" />
       </list>
     </recent_temporary>
@@ -108,7 +108,7 @@
       <workItem from="1705242013563" duration="9759000" />
       <workItem from="1705273229695" duration="38000" />
       <workItem from="1705296366444" duration="7501000" />
-      <workItem from="1705326572063" duration="2700000" />
+      <workItem from="1705326572063" duration="3286000" />
     </task>
     <servers />
   </component>
