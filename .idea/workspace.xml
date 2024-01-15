@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eed3d98e-e9f1-476d-b728-c79e5cea9d8f" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/data/E2L/val.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/EncoderAndDecoderDemo.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/EncoderAndDecoderDemo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/encoderDemo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/img2tex.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/img2tex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +41,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.EncoderAndDecoderDemo (1)">
+  <component name="RunManager" selected="Python.EncoderAndDecoderDemo">
     <configuration name="EncoderAndDecoderDemo (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Everything2Latex" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,8 +110,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.EncoderAndDecoderDemo (1)" />
         <item itemvalue="Python.EncoderAndDecoderDemo" />
+        <item itemvalue="Python.EncoderAndDecoderDemo (1)" />
         <item itemvalue="Python.train" />
       </list>
     </recent_temporary>
@@ -135,7 +128,7 @@
       <workItem from="1705242013563" duration="9759000" />
       <workItem from="1705273229695" duration="38000" />
       <workItem from="1705296366444" duration="7501000" />
-      <workItem from="1705326572063" duration="5165000" />
+      <workItem from="1705326572063" duration="6467000" />
     </task>
     <servers />
   </component>
@@ -154,8 +147,8 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Everything2Latex$encoderDemo.coverage" NAME="encoderDemo 覆盖结果" MODIFIED="1705328573201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/Everything2Latex$EncoderAndDecoderDemo__1_.coverage" NAME="EncoderAndDecoderDemo (1) 覆盖结果" MODIFIED="1705332803256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Everything2Latex$encoderDemo.coverage" NAME="EncoderAndDecoderDemo 覆盖结果" MODIFIED="1705333798787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Everything2Latex$EncoderAndDecoderDemo__1_.coverage" NAME="EncoderAndDecoderDemo (1) 覆盖结果" MODIFIED="1705333041061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Everything2Latex$train.coverage" NAME="train 覆盖结果" MODIFIED="1705327668060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
