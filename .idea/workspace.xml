@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eed3d98e-e9f1-476d-b728-c79e5cea9d8f" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/data/E2L/val.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/EncoderAndDecoderDemo.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/EncoderAndDecoderDemo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/encoderDemo.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/model/img2tex.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/img2tex.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
@@ -44,7 +48,29 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.EncoderAndDecoderDemo">
+  <component name="RunManager" selected="Python.EncoderAndDecoderDemo (1)">
+    <configuration name="EncoderAndDecoderDemo (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Everything2Latex" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/EncoderAndDecoderDemo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="EncoderAndDecoderDemo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Everything2Latex" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,6 +117,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.EncoderAndDecoderDemo (1)" />
         <item itemvalue="Python.EncoderAndDecoderDemo" />
         <item itemvalue="Python.train" />
       </list>
@@ -108,7 +135,7 @@
       <workItem from="1705242013563" duration="9759000" />
       <workItem from="1705273229695" duration="38000" />
       <workItem from="1705296366444" duration="7501000" />
-      <workItem from="1705326572063" duration="3286000" />
+      <workItem from="1705326572063" duration="5165000" />
     </task>
     <servers />
   </component>
@@ -128,6 +155,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Everything2Latex$encoderDemo.coverage" NAME="encoderDemo 覆盖结果" MODIFIED="1705328573201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Everything2Latex$EncoderAndDecoderDemo__1_.coverage" NAME="EncoderAndDecoderDemo (1) 覆盖结果" MODIFIED="1705332803256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Everything2Latex$train.coverage" NAME="train 覆盖结果" MODIFIED="1705327668060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
