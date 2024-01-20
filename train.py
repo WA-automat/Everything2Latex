@@ -14,7 +14,6 @@ from torch.utils.checkpoint import checkpoint as train_ck
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # device = "cpu"
 
-
 img2tex.device = device
 '''
 如果网络的输入数据维度或类型上变化不大，设置  torch.backends.cudnn.benchmark = true  可以增加运行效率；

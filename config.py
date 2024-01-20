@@ -1,9 +1,9 @@
 # 数据路径
 data_name = 'E2L'  # 模型名称,仅在保存的时候用到
-vocab_path = './data/E2L/vocab.json'
-train_set_path = './data/E2L/train.json'
-val_set_path = './data/E2L/val.json'
-test_set_path = './dara/E2L/test.json'
+vocab_path = './data/test/vocab.json'
+train_set_path = './data/test/train.json'
+val_set_path = './data/test/val.json'
+test_set_path = './dara/test/test.json'
 
 # 模型参数
 emb_dim = 30  # 词嵌入维数80

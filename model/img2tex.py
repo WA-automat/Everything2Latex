@@ -1,119 +1,103 @@
-import math
 import numpy as np
 import torch
-import torch.nn as nn
+import math
+from torch import nn
 import torch.nn.functional as F
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-
-class PositionalEncoding(nn.Module):
-    """
-    位置编码
-    """
-
-    def __init__(self, d_model, max_len=1000):
-        super(PositionalEncoding, self).__init__()
-        self.dropout = nn.Dropout(p=0.1)
-
-        position = torch.arange(0, max_len).unsqueeze(1)
-        div_term = torch.exp(torch.arange(0, d_model, 2) * (-math.log(10000.0) / d_model))
-        pe = torch.zeros(max_len, d_model)
-        pe[:, 0::2] = torch.sin(position * div_term)
-        pe[:, 1::2] = torch.cos(position * div_term)
-        pe = pe.unsqueeze(0).transpose(0, 1)
-
-        self.register_buffer('pe', pe)
-
-    def forward(self, x):
-        x = x + self.pe[:x.size(0), :]
-        return self.dropout(x)
-
-
-class ResBlock(nn.Module):
-    """
-    ResNetEncoder的基础块
-    """
-    expansion = 1
-
-    def __init__(self, in_channels, out_channels, stride=(1, 1)):
-        super(ResBlock, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size=(3, 3), stride=stride, padding=(1, 1), bias=False)
-        self.bn1 = nn.BatchNorm2d(out_channels)
-        self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1),
-                               bias=False)
-        self.bn2 = nn.BatchNorm2d(out_channels)
-
-        self.shortcut = nn.Sequential()
-        if stride != (1, 1) or in_channels != out_channels:
-            self.shortcut = nn.Sequential(
-                nn.Conv2d(in_channels, out_channels, kernel_size=(1, 1), stride=stride, bias=False),
-                nn.BatchNorm2d(out_channels)
-            )
-
-    def forward(self, x):
-        out = nn.ReLU()(self.bn1(self.conv1(x)))
-        out = self.bn2(self.conv2(out))
-        out += self.shortcut(x)
-        out = nn.ReLU()(out)
-        return out
+# device = "cpu"
 
 
 class Encoder(nn.Module):
-    """
-    ResNetEncoder网络结构
-    """
-
-    def __init__(self, input_channels=3, hidden_channels=64, block=ResBlock, layers=(3, 4, 6, 3), num_classes=1000,
-                 use_position_encoding=True):
+    def __init__(self):
         super(Encoder, self).__init__()
-        self.in_channels = hidden_channels
+        self.conv1 = nn.Conv2d(1, 64, 3, stride=1, padding=1)
+        self.maxpool1 = nn.MaxPool2d(2, stride=1, padding=1)
 
-        self.conv1 = nn.Conv2d(input_channels, hidden_channels, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3),
-                               bias=False)
-        self.bn1 = nn.BatchNorm2d(hidden_channels)
-        self.maxpool = nn.MaxPool2d(kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+        self.conv2 = nn.Conv2d(64, 128, 3, stride=1, padding=1)
+        self.maxpool2 = nn.MaxPool2d(2, stride=1, padding=1)
 
-        self.layer1 = self._make_layer(block, hidden_channels, layers[0])
-        self.layer2 = self._make_layer(block, hidden_channels * 2, layers[1], stride=(2, 2))
-        self.layer3 = self._make_layer(block, hidden_channels * 4, layers[2], stride=(2, 2))
-        self.layer4 = self._make_layer(block, hidden_channels * 8, layers[3], stride=(2, 2))
+        self.conv3 = nn.Conv2d(128, 256, 3, stride=1, padding=1)
 
-        self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
-        self.fc = nn.Linear(hidden_channels * 8 * block.expansion, num_classes)
-        self.use_position_encoding = use_position_encoding
+        self.conv4 = nn.Conv2d(256, 256, 3, stride=1, padding=1)
+        self.maxpool3 = nn.MaxPool2d((2, 1), stride=(2, 1), padding=(1, 0))
 
-        # 增加位置编码功能
-        if self.use_position_encoding:
-            self.position_encoding = PositionalEncoding(hidden_channels)
+        self.conv5 = nn.Conv2d(256, 512, 3, stride=1, padding=1)
+        self.maxpool4 = nn.MaxPool2d((1, 2), stride=(1, 2), padding=(0, 1))
 
-    def _make_layer(self, block, out_channels, blocks, stride=(1, 1)):
-        layers = []
-        layers.append(block(self.in_channels, out_channels, stride))
-        self.in_channels = out_channels * block.expansion
-        for i in range(1, blocks):
-            layers.append(block(self.in_channels, out_channels))
-            self.in_channels = out_channels * block.expansion
-
-        return nn.Sequential(*layers)
+        self.conv6 = nn.Conv2d(512, 512, 3)
 
     def forward(self, x):
-        if self.use_position_encoding:
-            x = self.position_encoding(x)
+        # layer1
+        x = self.conv1(x)
+        x = self.maxpool1(x)
+        x = F.relu(x)
 
-        out = nn.ReLU()(self.bn1(self.conv1(x)))
-        out = self.maxpool(out)
+        # layer2
+        x = self.conv2(x)
+        x = self.maxpool2(x)
+        x = F.relu(x)
 
-        out = self.layer1(out)
-        out = self.layer2(out)
-        out = self.layer3(out)
-        out = self.layer4(out)
+        # layer3
+        x = self.conv3(x)
+        x = F.relu(x)
 
-        out = self.avgpool(out)
+        # layer4
+        x = self.conv4(x)
+        x = self.maxpool3(x)
+        x = F.relu(x)
 
-        return out
+        # layer5
+        x = self.conv5(x)
+        x = self.maxpool4(x)
+        x = F.relu(x)
 
+        # layer6
+        x = self.conv6(x)
+        x = F.relu(x)
+
+        # 位置嵌入
+        x = x.permute(0, 2, 3, 1)
+        x = self.add_timing_signal_nd(x)
+        x = x.permute(0, 3, 1, 2)
+
+        x = x.contiguous()
+        return x
+
+    # 修改自:
+    # https://github.com/tensorflow/tensor2tensor/blob/37465a1759e278e8f073cd04cd9b4fe377d3c740/tensor2tensor/layers/common_attention.py
     def add_timing_signal_nd(self, x, min_timescale=1.0, max_timescale=1.0e4):
+        """Adds a bunch of sinusoids of different frequencies to a Tensor.
+
+        Each channel of the input Tensor is incremented by a sinusoid of a difft
+        frequency and phase in one of the positional dimensions.
+
+        This allows attention to learn to use absolute and relative positions.
+        Timing signals should be added to some precursors of both the query and the
+        memory inputs to attention.
+
+        The use of relative position is possible because sin(a+b) and cos(a+b) can
+        be experessed in terms of b, sin(a) and cos(a).
+
+        x is a Tensor with n "positional" dimensions, e.g. one dimension for a
+        sequence or two dimensions for an image
+
+        We use a geometric sequence of timescales starting with
+        min_timescale and ending with max_timescale.  The number of different
+        timescales is equal to channels // (n * 2). For each timescale, we
+        generate the two sinusoidal signals sin(timestep/timescale) and
+        cos(timestep/timescale).  All of these sinusoids are concatenated in
+        the channels dimension.
+
+        Args:
+            x: a Tensor with shape [batch, d1 ... dn, channels]
+            min_timescale: a float
+            max_timescale: a float
+
+        Returns:
+            a Tensor the same shape as x.
+
+        """
         static_shape = list(x.shape)  # [2, 512, 50, 120]
         num_dims = len(static_shape) - 2  # 2
         channels = x.shape[-1]  # 512
@@ -136,8 +120,9 @@ class Encoder(nn.Module):
                 signal = signal.unsqueeze(0)
             for _ in range(num_dims - 1 - dim):  # 1, 0
                 signal = signal.unsqueeze(-2)
-            x += signal  # [1, 14, 1, 512]; [1, 1, 14, 512]
-        return x
+            # x += signal  # [1, 14, 1, 512]; [1, 1, 14, 512]
+            out = x + signal
+        return out
 
 
 class Attention(nn.Module):
