@@ -217,9 +217,9 @@ def train(train_loader, encoder, decoder, criterion, encoder_optimizer, decoder_
                                                                           batch_time=batch_time,
                                                                           loss=losses,
                                                                           top3=top3accs))
-        # if i % save_freq == 0:
-        #     save_checkpoint(data_name, epoch, epochs_since_improvement, encoder, decoder,encoder_optimizer,
-        #                 decoder_optimizer, 0,0)
+        if i % save_freq == 0:
+            save_checkpoint(data_name, epoch, epochs_since_improvement, encoder, decoder, encoder_optimizer,
+                            decoder_optimizer, 0, 0)
         del imgs, scores, caps_sorted, decode_lengths, alphas, sort_ind, loss, targets
         torch.cuda.empty_cache()
 

@@ -16,5 +16,37 @@
       "train": "images/images_train/",
       "val": "images/images_val/"
     }
+  },
+  "full": {
+    "root": "../data/full/",
+    "matching": {
+      "test": "matching/test.matching.txt",
+      "train": "matching/train.matching.txt",
+      "val": "matching/val.matching.txt"
+    },
+    "formulas": {
+      "test": "formulas/test.formulas.norm.txt",
+      "train": "formulas/train.formulas.norm.txt",
+      "val": "formulas/val.formulas.norm.txt",
+      "vocab": "formulas/vocab.txt"
+    },
+    "images": {
+      "test": "images/images_test/",
+      "train": "images/images_train/",
+      "val": "images/images_val/"
+    }
+  },
+  "fullhand": {
+    "root": "../data/fullhand/",
+    "matching": {
+      "test": "matching/test.matching.txt",
+      "train": "matching/train.matching.txt",
+      "val": "matching/val.matching.txt"
+    },
+    "formulas": {
+      "formulasTxt": "formulas/formulas.norm.txt",
+      "vocab": "formulas/vocab.txt"
+    },
+    "images": "images/"
   }
 }
