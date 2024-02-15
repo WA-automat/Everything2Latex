@@ -6,8 +6,10 @@ import argparse
 from utils.dataloader import data_turn
 from PIL import Image
 
-# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-device = "cpu"
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+
+# device = "cpu"
 
 
 def caption_image_beam_search(encoder, decoder, image_path, word_map, beam_size=5):
@@ -41,6 +43,8 @@ def caption_image_beam_search(encoder, decoder, image_path, word_map, beam_size=
         # Flatten encoding
         encoder_out = encoder_out.view(1, -1, encoder_dim)  # (1, num_pixels, encoder_dim)
         num_pixels = encoder_out.size(1)
+
+        print(encoder_out)
 
         # We'll treat the problem as having a batch size of k
         encoder_out = encoder_out.expand(k, num_pixels, encoder_dim)  # (k, num_pixels, encoder_dim)
@@ -85,7 +89,7 @@ def caption_image_beam_search(encoder, decoder, image_path, word_map, beam_size=
             h = decoder.decode_step(torch.cat([embeddings, awe], dim=1), h)  # (s, decoder_dim)
 
             scores = decoder.fc(h)  # (s, vocab_size)
-            scores = F.log_softmax(scores, dim=1)
+            scores = F.softmax(scores, dim=1)
 
             # Add
             scores = top_k_scores.expand_as(scores) + scores  # (s, vocab_size)
@@ -98,12 +102,12 @@ def caption_image_beam_search(encoder, decoder, image_path, word_map, beam_size=
                 top_k_scores, top_k_words = scores.view(-1).topk(k, 0, True, True)  # (s)
 
             # 将展开的索引转换为实际的分数索引
-            prev_word_inds = top_k_words / vocab_size  # (s)
             next_word_inds = top_k_words % vocab_size  # (s)
+            # print(next_word_inds)
 
             # 把新的单词加入到序列中, alphas
-            seqs = torch.cat([seqs[prev_word_inds], next_word_inds.unsqueeze(1)], dim=1)  # (s, step+1)
-            seqs_alpha = torch.cat([seqs_alpha[prev_word_inds], alpha[prev_word_inds].unsqueeze(1)],
+            seqs = torch.cat([seqs, next_word_inds.unsqueeze(1)], dim=1)  # (s, step+1)
+            seqs_alpha = torch.cat([seqs_alpha, alpha.unsqueeze(1)],
                                    dim=1)  # (s, step+1, enc_image_size, enc_image_size)
 
             # Which sequences are incomplete (didn't reach <end>)?
@@ -123,19 +127,18 @@ def caption_image_beam_search(encoder, decoder, image_path, word_map, beam_size=
                 break
             seqs = seqs[incomplete_inds]
             seqs_alpha = seqs_alpha[incomplete_inds]
-            h = h[prev_word_inds[incomplete_inds]]
-            # c = c[prev_word_inds[incomplete_inds]]
-            encoder_out = encoder_out[prev_word_inds[incomplete_inds]]
+            h = h[incomplete_inds]
+            encoder_out = encoder_out[incomplete_inds]
             top_k_scores = top_k_scores[incomplete_inds].unsqueeze(1)
             k_prev_words = next_word_inds[incomplete_inds].unsqueeze(1)
 
             # Break if things have been going on too long
-            print('step', step)
+            # print('step', step)
             if step > 160:
                 break
             step += 1
 
-        complete_seqs_scores = np.array(complete_seqs_scores)
+        complete_seqs_scores = np.array([s.cpu().numpy() for s in complete_seqs_scores])
         i = np.argmax(complete_seqs_scores)
         # i = complete_seqs_scores.index(max(complete_seqs_scores))
         seq = complete_seqs[i]
@@ -188,10 +191,10 @@ def visualize_att(image_path, seq, alphas, rev_word_map, smooth=True):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Show, Attend, and Tell - Tutorial - Generate Caption')
 
-    parser.add_argument('--img', '-i', default='./data/CROHME/images/images_train/TrainData2_15_sub_33.png',
+    parser.add_argument('--img', '-i', default='./data/test/images/images_train/1.png',
                         help='path to image')
-    parser.add_argument('--model', '-m', default='BEST_checkpoint_CROHME.pth.tar', help='path to model')
-    parser.add_argument('--word_map', '-wm', default='./data/CROHME/vocab.json', help='path to word map JSON')
+    parser.add_argument('--model', '-m', default='BEST_checkpoint_test.pth.tar', help='path to model')
+    parser.add_argument('--word_map', '-wm', default='./data/test/vocab.json', help='path to word map JSON')
     parser.add_argument('--beam_size', '-b', default=3, type=int, help='beam size for beam search')
     parser.add_argument('--dont_smooth', dest='smooth', action='store_false', help='do not smooth alpha overlay')
 

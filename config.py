@@ -7,8 +7,8 @@ test_set_path = './dara/E2L/test.json'
 
 # 模型参数
 emb_dim = 30  # 词嵌入维数80
-attention_dim = 128  # attention 层维度 256
-decoder_dim = 128  # decoder维度 128
+attention_dim = 32  # attention 层维度 256
+decoder_dim = 32  # decoder维度 128
 dropout = 0.5
 buckets = [[240, 100], [320, 80], [400, 80], [400, 100], [480, 80], [480, 100],
            [560, 80], [560, 100], [640, 80], [640, 100], [720, 80], [720, 100],
@@ -17,9 +17,9 @@ buckets = [[240, 100], [320, 80], [400, 80], [400, 100], [480, 80], [480, 100],
 
 # 训练参数
 start_epoch = 0
-epochs = 250  # 不触发早停机制时候最大迭代次数
+epochs = 10  # 不触发早停机制时候最大迭代次数
 epochs_since_improvement = 0  # 用于跟踪在验证集上分数没有提高的迭代次数
-batch_size = 1  # 训练解批大小
+batch_size = 2  # 训练解批大小
 test_batch_size = 2  # 验证集批大小
 encoder_lr = 1e-4  # 学习率
 decoder_lr = 4e-4  # 学习率

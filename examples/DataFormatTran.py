@@ -1,8 +1,18 @@
 import json
+import random
 from PIL import Image
 
 with open('path.json', 'r', encoding='utf-8') as f:
     _path = json.load(f)
+
+
+def random_sample_dict(dictionary, num_samples):
+    keys = list(dictionary.keys())
+    random.shuffle(keys)
+    sampled_dict = {}
+    for key in keys[:num_samples]:
+        sampled_dict[key] = dictionary[key]
+    return sampled_dict
 
 
 def small_data_format(_type):
@@ -114,6 +124,8 @@ def full_fullhand_combine():
         json.dump(val_dt, f)
     print("val.json => E2L Finish!")
 
+    return train_dt, test_dt, val_dt
+
 
 def full_fullhand_vocab():
     paths = ['../data/E2L/test.json', '../data/E2L/train.json', '../data/E2L/val.json']
@@ -153,9 +165,26 @@ if __name__ == '__main__':
     """
     full 和 fullhand 文件夹的数据处理(结果存放在../data/E2L下)
     """
-    # full_fullhand_combine()
+    train_dt, test_dt, val_dt = full_fullhand_combine()
 
     """
     统计full 和 fullhand 的 vocab
     """
     full_fullhand_vocab()
+
+    """
+    取出部分数据集
+    """
+    test_dt = random_sample_dict(test_dt, 250)
+    train_dt = random_sample_dict(train_dt, 2000)
+    val_dt = random_sample_dict(val_dt, 250)
+
+    with open("../data/E2L/test.json", 'w', encoding='utf-8') as f:
+        json.dump(test_dt, f)
+    print("test.json => E2L Finish!")
+    with open("../data/E2L/train.json", 'w', encoding='utf-8') as f:
+        json.dump(train_dt, f)
+    print("train.json => E2L Finish!")
+    with open("../data/E2L/val.json", 'w', encoding='utf-8') as f:
+        json.dump(val_dt, f)
+    print("val.json => E2L Finish!")
