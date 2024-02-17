@@ -1,0 +1,24 @@
+<RCC>
+  <qresource prefix="导航栏">
+    <file>icon/截图.png</file>
+    <file>icon/关于我们.png</file>
+    <file>icon/画笔.png</file>
+  </qresource>
+  <qresource prefix="图片">
+    <file>icon/截图 (1).png</file>
+    <file>icon/截图 (2).png</file>
+    <file>icon/清空.png</file>
+  </qresource>
+  <qresource prefix="手写">
+    <file>icon/撤回.png</file>
+    <file>icon/清空.png</file>
+    <file>icon/圆点.png</file>
+    <file>icon/画笔 (1).png</file>
+  </qresource>
+  <qresource prefix="识别栏">
+    <file>icon/批量识别.png</file>
+  </qresource>
+  <qresource prefix="文本栏">
+    <file>icon/复制文本.png</file>
+  </qresource>
+</RCC>
