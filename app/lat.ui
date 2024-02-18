@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>uiMainWindow</class>
+ <widget class="QMainWindow" name="uiMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1306</width>
+    <height>1047</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>591</width>
+    <height>412</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>581</width>
+     <height>412</height>
+    </size>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>21</y>
+      <width>1171</width>
+      <height>871</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>581</width>
+      <height>421</height>
+     </size>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::NoContextMenu</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(233, 238, 253);
+border-radius:10px;
+</string>
+    </property>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="geometry">
+      <rect>
+       <x>96</x>
+       <y>45</y>
+       <width>1051</width>
+       <height>791</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>521</width>
+       <height>381</height>
+      </size>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="pic_page">
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="geometry">
+        <rect>
+         <x>880</x>
+         <y>410</y>
+         <width>151</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>41</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(119, 147, 246);
+border-radius:10px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="resource.qrc">
+         <normaloff>:/识别栏/icon/批量识别.png</normaloff>:/识别栏/icon/批量识别.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="inpic">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>11</y>
+         <width>841</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>401</width>
+         <height>131</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>上传图片或截图</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="outpic">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>320</y>
+         <width>841</width>
+         <height>202</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>401</width>
+         <height>101</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>识别结果</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="outthree">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>720</y>
+         <width>841</width>
+         <height>62</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>401</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="outtwo">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>640</y>
+         <width>841</width>
+         <height>62</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>401</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="outone">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>560</y>
+         <width>841</width>
+         <height>62</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>401</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>870</x>
+         <y>550</y>
+         <width>181</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="copy1button">
+          <property name="minimumSize">
+           <size>
+            <width>79</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;</string>
+          </property>
+          <property name="text">
+           <string>copy</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/文本栏/icon/复制文本.png</normaloff>:/文本栏/icon/复制文本.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="copy2button">
+          <property name="minimumSize">
+           <size>
+            <width>79</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;</string>
+          </property>
+          <property name="text">
+           <string>copy</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/文本栏/icon/复制文本.png</normaloff>:/文本栏/icon/复制文本.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="copy3button">
+          <property name="minimumSize">
+           <size>
+            <width>79</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;</string>
+          </property>
+          <property name="text">
+           <string>copy</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/文本栏/icon/复制文本.png</normaloff>:/文本栏/icon/复制文本.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>860</x>
+         <y>10</y>
+         <width>191</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QPushButton" name="clear_button">
+          <property name="minimumSize">
+           <size>
+            <width>79</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;</string>
+          </property>
+          <property name="text">
+           <string>清空图片</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/图片/icon/清空.png</normaloff>:/图片/icon/清空.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="uppic">
+          <property name="minimumSize">
+           <size>
+            <width>79</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;</string>
+          </property>
+          <property name="text">
+           <string>上传图片</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/图片/icon/截图 (1).png</normaloff>:/图片/icon/截图 (1).png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="cutpic">
+          <property name="minimumSize">
+           <size>
+            <width>79</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;</string>
+          </property>
+          <property name="text">
+           <string>截取图片</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/图片/icon/截图 (2).png</normaloff>:/图片/icon/截图 (2).png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <zorder>pushButton_5</zorder>
+      <zorder>outpic</zorder>
+      <zorder>outthree</zorder>
+      <zorder>outtwo</zorder>
+      <zorder>layoutWidget</zorder>
+      <zorder>layoutWidget_2</zorder>
+      <zorder>inpic</zorder>
+      <zorder>outone</zorder>
+     </widget>
+     <widget class="QWidget" name="paint_page">
+      <widget class="QLabel" name="outpaint">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>320</y>
+         <width>841</width>
+         <height>202</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>401</width>
+         <height>101</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>识别结果</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="inpic_2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>11</y>
+         <width>841</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>401</width>
+         <height>131</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>画板</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="outone_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>560</y>
+         <width>841</width>
+         <height>62</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>401</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="outthree_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>720</y>
+         <width>841</width>
+         <height>62</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>401</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="outtwo_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>640</y>
+         <width>841</width>
+         <height>62</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>401</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="layoutWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>860</x>
+         <y>10</y>
+         <width>191</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QPushButton" name="clearpaint_butt">
+          <property name="minimumSize">
+           <size>
+            <width>59</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;</string>
+          </property>
+          <property name="text">
+           <string>清空</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/图片/icon/清空.png</normaloff>:/图片/icon/清空.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pan">
+          <property name="minimumSize">
+           <size>
+            <width>59</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/手写/icon/画笔 (1).png</normaloff>:/手写/icon/画笔 (1).png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="changepan">
+          <property name="minimumSize">
+           <size>
+            <width>59</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/手写/icon/圆点.png</normaloff>:/手写/icon/圆点.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="back">
+          <property name="minimumSize">
+           <size>
+            <width>59</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/手写/icon/撤回.png</normaloff>:/手写/icon/撤回.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget_4">
+       <property name="geometry">
+        <rect>
+         <x>870</x>
+         <y>550</y>
+         <width>181</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QPushButton" name="copy1button_2">
+          <property name="minimumSize">
+           <size>
+            <width>79</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;</string>
+          </property>
+          <property name="text">
+           <string>copy</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/文本栏/icon/复制文本.png</normaloff>:/文本栏/icon/复制文本.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="copy2button_2">
+          <property name="minimumSize">
+           <size>
+            <width>79</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;</string>
+          </property>
+          <property name="text">
+           <string>copy</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/文本栏/icon/复制文本.png</normaloff>:/文本栏/icon/复制文本.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="copy3button_2">
+          <property name="minimumSize">
+           <size>
+            <width>79</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-radius:10px;</string>
+          </property>
+          <property name="text">
+           <string>copy</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/文本栏/icon/复制文本.png</normaloff>:/文本栏/icon/复制文本.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="geometry">
+        <rect>
+         <x>880</x>
+         <y>410</y>
+         <width>151</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>41</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(119, 147, 246);
+border-radius:10px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="resource.qrc">
+         <normaloff>:/识别栏/icon/批量识别.png</normaloff>:/识别栏/icon/批量识别.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="about_page"/>
+    </widget>
+    <widget class="QPushButton" name="EXIT">
+     <property name="geometry">
+      <rect>
+       <x>980</x>
+       <y>10</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>31</width>
+       <height>21</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius:10px;
+color: rgb(255, 255, 255);
+background-color: rgb(119, 147, 246);
+font: 24pt &quot;Agency FB&quot;;</string>
+     </property>
+     <property name="text">
+      <string>X</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QFrame" name="lead">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>91</width>
+       <height>871</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>51</width>
+       <height>421</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qlineargradient(spread:pad, x1:0.451599, y1:0.755955, x2:0.440484, y2:0.357818, stop:0 rgba(255, 255, 255, 247), stop:1 rgba(112, 142, 247, 241));
+border-radius:10px;</string>
+     </property>
+     <widget class="QPushButton" name="about_buttpn">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>680</y>
+        <width>59</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>31</width>
+        <height>41</height>
+       </size>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;关于&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 0), stop:1 rgba(255, 255, 255, 0));
+border:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/导航栏/icon/关于我们.png</normaloff>:/导航栏/icon/关于我们.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pic_button">
+      <property name="geometry">
+       <rect>
+        <x>21</x>
+        <y>138</y>
+        <width>59</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>31</width>
+        <height>41</height>
+       </size>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="toolTipDuration">
+       <number>-1</number>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 0), stop:1 rgba(255, 255, 255, 0));
+border:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/导航栏/icon/截图.png</normaloff>:/导航栏/icon/截图.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="autoRepeat">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+      <property name="autoRepeatDelay">
+       <number>300</number>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="paint_button">
+      <property name="geometry">
+       <rect>
+        <x>21</x>
+        <y>271</y>
+        <width>59</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>31</width>
+        <height>41</height>
+       </size>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;手写识别&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 0), stop:1 rgba(255, 255, 255, 0));
+border:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/导航栏/icon/画笔.png</normaloff>:/导航栏/icon/画笔.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>clearpaint_butt</sender>
+   <signal>clicked()</signal>
+   <receiver>inpic_2</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1040</x>
+     <y>146</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>947</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>copy1button_2</sender>
+   <signal>clicked()</signal>
+   <receiver>outone_2</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1068</x>
+     <y>692</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>957</x>
+     <y>698</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>copy2button_2</sender>
+   <signal>clicked()</signal>
+   <receiver>outtwo_2</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1059</x>
+     <y>757</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>956</x>
+     <y>758</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>copy3button_2</sender>
+   <signal>clicked()</signal>
+   <receiver>outthree_2</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1062</x>
+     <y>833</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>962</x>
+     <y>840</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>outpaint</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1014</x>
+     <y>527</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>977</x>
+     <y>528</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>EXIT</sender>
+   <signal>clicked()</signal>
+   <receiver>uiMainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1034</x>
+     <y>68</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1008</x>
+     <y>8</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_button</sender>
+   <signal>clicked()</signal>
+   <receiver>inpic</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1040</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>965</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>copy1button</sender>
+   <signal>clicked()</signal>
+   <receiver>outone</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1056</x>
+     <y>684</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>965</x>
+     <y>696</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>copy2button</sender>
+   <signal>clicked()</signal>
+   <receiver>outtwo</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1032</x>
+     <y>753</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>958</x>
+     <y>761</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>copy3button</sender>
+   <signal>clicked()</signal>
+   <receiver>outthree</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1055</x>
+     <y>832</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>981</x>
+     <y>843</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>outpic</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1022</x>
+     <y>557</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>969</x>
+     <y>557</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pic_button</sender>
+   <signal>clicked()</signal>
+   <receiver>uiMainWindow</receiver>
+   <slot>turntopage_pic()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>60</x>
+     <y>187</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>paint_button</sender>
+   <signal>clicked()</signal>
+   <receiver>uiMainWindow</receiver>
+   <slot>turntopage_paint()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>57</x>
+     <y>313</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>325</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>about_buttpn</sender>
+   <signal>clicked()</signal>
+   <receiver>uiMainWindow</receiver>
+   <slot>turntopage_about()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>63</x>
+     <y>735</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>706</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>turntopage_pic()</slot>
+  <slot>turntopage_paint()</slot>
+  <slot>turntopage_about()</slot>
+ </slots>
+</ui>
